@@ -1,0 +1,62 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Análisis de Datos</title>
+     {% tailwind_css %}
+     <style>
+        p{
+          font-weight: bold;
+        }
+        span {
+            font-weight: normal;
+        }
+
+        tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+table th {
+    background-color: #2563eb;
+    color: white;
+}
+
+table tbody {
+
+    overflow-x: auto;
+}
+
+table {
+    width: 850px;
+    border-collapse: collapse;
+    display: block; /* Importante */
+    overflow-y: hidden;
+}
+
+
+    </style>
+</head>
+<body class="h-screen w-full flex justify-center ">
+ <div class="max-w-4xl p-4">
+    <h2 class="p-4 text-center text-xl font-bold text-blue-600">Resultados del análisis de datos</h2>
+    <p>Ingresos Totales: <span> {{ ingresos_total }} </span> </p>
+    <p>Media de Precio:  <span> {{ media_precios }}  </span></p>
+     <p>Ingresos totales predichos para los próximos días:  <span> {{ ingresos_predichos }}  </span></p>
+    <p>Producto más vendido:  <span> {{ producto_mas_vendido }}  </span></p>
+     <p>Elasticidad precio de la demanda:   <span> {{ elasticidad }}  </span></p>
+    <h3 class="py-4 text-lg font-bold text-blue-600">Cantidades vendidas</h3>
+    <img src="data:image/png;base64,{{ image_base64 }}" />
+     <h3 class="py-4 text-lg font-bold text-blue-600">Gráfico de producto</h3>
+    <img src="data:image/png;base64,{{ graph_base64 }}" />
+    <h3 class="py-4 text-lg font-bold text-blue-600">Tabla de ventas</h3>
+    {{ table_html|safe }}
+
+      </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File</title>
+     {% tailwind_css %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <style>
+        .errorlist, label {
+          
+            display: none;
+        }
+        #id_file {
+
+  
+            padding: 10px;
+        }
+    </style>
+</head>
+<body class="h-screen w-full flex justify-center items-center flex-col">
+    <h2 class="p-4 text-xl font-bold text-blue-600">Cargar datos de ventas</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+
+        <div class="border rounded-md">
+            
+        {{ form.as_p }}
+
+              </div>
+
+<div class="flex w-full justify-center">
+     <button type="submit" class=" m-4 text-white bg-blue-700 hover:bg-blue-800
+     focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+         Enviar</button>
+</div>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subida exitosa</title>
+     {% tailwind_css %}
+</head>
+<body class="h-screen w-full flex justify-center items-center flex-col">
+
+        <h2 class="p-4 text-xl font-bold text-neutral-900">¡Documento cargado exitosamente!</h2>
+    <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="{% url 'analyze_data' %}">Analizar datos</a>
+
+
+
+</body>
+</html>
